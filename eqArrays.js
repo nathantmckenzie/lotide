@@ -1,19 +1,12 @@
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
-    if (actual === expected) {
-      console.log(`Assertion Passed: ${actual.toString()} === ${expected.toString()}`);
-    } else {
-      console.log(`Assertion Failed: ${actual.toString()} !== ${expected.toString()}`);
-    }
-  };
-  
+    return JSON.stringify(actual)==JSON.stringify(expected);
+  }
   
   
   
   // TEST CODE
-  assertEqual("Lighthouse Labs", "Bootcamp");
-  assertEqual(1, 1);
-  assertEqual("something","something");
-  assertEqual("onething","anotherthing");
-  assertEqual(123,123);
-  assertEqual(13123,2342);
+  console.log(assertEqual([1, 1, 0],[1, 0, 1]));
+  console.log(assertEqual([1, 1],[1,1]));
+  console.log(assertEqual(["some text"],["some text"]));
+  
