@@ -1,0 +1,30 @@
+// FUNCTION IMPLEMENTATION
+const assertArrayEqual = function(actual, expected) {
+  if (JSON.stringify(actual) == JSON.stringify(expected)) {
+    console.log(`Assertion Passed: ${actual} === ${expected}`);
+  } else if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    console.log(`Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+// FUNCTION IMPLEMENTATION
+const assertEqual = function(actual, expected) {
+  return JSON.stringify(actual) == JSON.stringify(expected);
+}
+
+function middle(arr) {
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    let calculation = i / (arr.length - 1);
+    if (arr.length < 3) {
+      return newArray;
+    } else if (i / (arr.length - 1) === 0.5) {
+      newArray.push(arr[i]);
+    } else if (i / arr.length === 0.5) {
+      newArray.push(arr[i - 1], arr[i]);
+    }
+  }
+  return newArray;
+}
+console.log(assertArrayEqual(middle([2]),[]));
+console.log(assertArrayEqual(middle([2, 3, 5, 11, 9, 10, 22]),[11]));
+console.log(assertArrayEqual(middle([2, 3, 4, 2, 5, 6]),[4,2]));
