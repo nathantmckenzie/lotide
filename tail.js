@@ -13,6 +13,3 @@ const tail = function(arr) {
 
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 const nothing = ["something"];
-tail(words); // no need to capture the return value since we are not checking it
-console.log(assertEqual(words.length, 3));
-console.log(assertEqual(nothing.length, 0));
