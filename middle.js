@@ -1,15 +1,10 @@
-// FUNCTION IMPLEMENTATION
-const assertArrayEqual = function(actual, expected) {
-  if (JSON.stringify(actual) == JSON.stringify(expected)) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  return JSON.stringify(actual) == JSON.stringify(expected);
-}
+const assertArrayEqual = require("./assertArraysEqual");
+const assertEqual = require("./assertEqual");
+
+//// FUNCTION IMPLEMENTATION
+//const assertEqual = function(actual, expected) {
+//  return JSON.stringify(actual) == JSON.stringify(expected);
+//}
 
 function middle(arr) {
   let newArray = [];
@@ -25,6 +20,5 @@ function middle(arr) {
   }
   return newArray;
 }
-console.log(assertArrayEqual(middle([2]),[]));
-console.log(assertArrayEqual(middle([2, 3, 5, 11, 9, 10, 22]),[11]));
-console.log(assertArrayEqual(middle([2, 3, 4, 2, 5, 6]),[4,2]));
+
+module.exports = middle;
